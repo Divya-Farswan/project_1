@@ -1,0 +1,132 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+/* sabse pehle body style karte hai */
+body { /* sabse pehle background color dena hai */
+    background-color: #a59e8c;
+    text-align: center; /* pure app ke content ko centre mai kar dia */
+}
+
+/* Heading styling */
+.heading {
+    color: #4e3f11;
+    font-size: 4vw;
+    font-weight: bolder;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 0 0 3vmin rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the game */
+/* now style the container class */
+.container {
+    height: 60vh; /* 70 */
+    /* 3rd and 4th property ke wajah se pura game left mai chala gaya isiliye we do display = flex, flex wrap = wrap, justify- content and align item */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+/* Game board */
+/* kyuki container ke ander humara game aa raha or game ke ander humare bhut sare boxes aa rahe toh mai chahri container se game ke pass jitna part jaye toh game ki jitne height jani chahiye that height can = 70vh or 60vmin*/
+/* vmin = 1% viewport's smaller dimension*/
+.game {
+    height: 60vmin;
+    width: 60vmin; /* and jese hi game ki width limit kar di vese hi boxes next line mai aa gaye*/
+    /* and jo boxes upper niche hore usko sahi karne ke liye we do display = flex*/
+    display: flex; /* and jese hi display = flex kia sare boxes single line ke ander aa jayege and next we do flex wrap = wrap*/
+    flex-wrap: wrap; /* yani jagah nhi hai toh next line mai boxes aa jayege */
+    /* and container ke height and width se game ko centre mai lana hai toh we do justify content and align items*/
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;/* boxes ke bich proper gap ke liye - means div ke gap ke liye*/
+    margin-bottom: 0%;
+}
+
+/* Individual game box (tic-tac-toe cell) */
+/* kyuki hum chahte ek height ke ander humare 3 boxes aaye, agar height hai 60% toh usse hum 3 lino ya 3 boxes mai divide karna chahte ha - toh har box/line ko 20% milna chahiye so height = 18vmin and same for width*/
+/* ab game ko bhi same height and width de dege*/
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1.5rem;
+    border: none;/* kuch border aa raha black right and button, usko hatane ke liye we do border = none */
+    box-shadow: 0 0 2vmin rgba(0, 0, 0, 0.3);
+    background-color: #D7CEB2;
+    font-size: 10vmin; /* sari chije vmin mai rakh re toh used vmin*/
+    font-weight: bold;
+    color: #b16e02;
+}
+
+/* Buttons styling */
+#reset-button, #new-button {
+    padding: 2vmin;
+    font-size: 3.5vmin;
+    border-radius: 3vmin;
+    border: none;
+    background-color: #b16e02;
+    color: #D7CEB2;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+#new-button {
+    display: inline-block;/* Ensures button is inline */
+    vertical-align: middle;/* Align button vertically with the text */
+}
+
+/* Message area */
+#msg {
+    color: #D7CEB2;
+    font-size: 8vmin;
+    display: inline-block;/* Span is already inline, but using inline-block allows margin adjustments */
+    margin-right: 2vmin;/* Add space between the message and the button */
+    vertical-align: middle;/* Align button vertically with the text */
+}
+
+/* Message container */
+.msg-container {
+    height: 17vh;
+}
+
+/* Hide class */
+.hide {
+    display: none;
+    height: 25vh;
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+    .game {
+        height: 90vmin;
+        width: 90vmin;
+    }
+
+    .box {
+        height: 25vmin;
+        width: 25vmin;
+        font-size: 6vmin;
+    }
+
+    .heading {
+        font-size: 6vw;
+    }
+
+    #msg {
+        font-size: 5vmin;
+    }
+
+    #reset-button,
+    #new-button {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    .msg-container {
+        height: 25vh;
+    }
+}

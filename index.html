@@ -1,0 +1,58 @@
+<!--MINI PROJECT TIC TAC TOE-->
+<!-- 1. iss game ke ander humare pass 9 boxes hote hai (0 - 8), 2. iss game ke ander two player khelte h, 3. and do symbols hote hai (O and X)-->
+<!-- 1. and player 1 koe bhi symbol le sakta hai and player 2 koe bhi symbol le sakta hai, 2. and iss game ke ander alternative turn milti hai-->
+<!-- 1. and jitega vahi jo same line ke ander apne tino ke tino symbols arrange karega, 2. and jitne wala orientation horizontal, vertical and diagonal bhi ho sakta hai -->
+<!-- dekha jaye iss game mai winning ke kuch patterns ban rahe hai and winning pattern means humara player kon kon se cases mai jit sakta hai - yani kin 3 box mai same value aa gaya toh humara player jit jayega-->
+<!-- winning pattern
+        1). 0, 1, 2
+        2). 3, 4, 5
+        3). 6, 7, 8
+        4). 0, 3, 6
+        5). 1, 4, 7
+        6). 2, 5, 8
+        7). 0, 4, 8
+        8). 2, 4, 6 toh humare pass 8 winning pattern hai or isme se ek satisfied ho jaye, kisi bhi player ke through-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--ye container winner msg print karwane ke liye hai or hum yaha app.js ke bad winner console karne ke bad aaye hai and sath mai isse container mai winner display karane ke bad new game button bhi dal dege 
+    and suruwat mai winner dikhane ki jarurat nhi hai toh uske liye new class dege hide and css ke ander isko display kar dege none or ensari chijo ko access kar lege js mai using query selector-->
+    <div class="msg-container hide">
+      <span><p id="msg">Winner</p></span>
+      <button id="new-button">New Game</button>
+    </div>
+    <main>
+      <div class="heading">
+        <h1 id="heading">Tic Tac Toe</h1>
+      </div>
+      <!--1st layout ko build karna start karte hai toh tic tac toe kese kaam karta hai? - humare pass proper game box hona chahiye jiske ander 9 individual boxes ho-->
+      <!-- or en 9 individual boxes ko jese hi hum press karre vese hi humare pass X or O symbol aa jaye, basically 9 boxes clickable hone chahiye isiliye 9 boxes ko div banane ke bajaye inhe button bana sakte hai-->
+      <!-- ki jese hi  boxes ko press karre kuch change karre vese hi backend mai kuch logic chale and check kia jaye ki humara game kis tarah se kaam karra hai-->
+      <!-- pure game ko ek container mai dal dete hai-->
+      <div class="container">
+        <div class="game">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+      </div>
+      <!--container ke bahar ek reset button dalege, jisse click karne se user game reset kar sakta hai-->
+      <button id="reset-button">Reset Game</button>
+    </main>
+    <!--connect app.js file to index.html toh body tag close hone se just pehle we use script tag and jiske ander source is going to be app.js-->
+    <script src="app.js"></script>
+  </body>
+</html>
